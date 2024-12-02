@@ -1,16 +1,41 @@
-export const fetchImages = async (query, page) => {
-  const ACCESS_KEY = "Zj8SKVO18CIfkkTG5ThfnE02iu6usULna63IZwwg3QA"; // Змініть ключ
-  const response = await fetch(
-    `https://api.unsplash.com/search/photos?page=${page}&query=${query}&client_id=${ACCESS_KEY}&per_page=12`
-  );
+import axios from "axios";
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch images");
-  }
+const API_TOKEN =
+  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNDVlMjJkZjU3NTA0NzI4NTVjY2MzODQ1YzRiOWVjYyIsIm5iZiI6MTczMzE3MDA1MS4yNCwic3ViIjoiNjc0ZTEzODNhZjZiM2UwMTgyYTFjNDEwIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.Mt3pPc4KxevSX9pQqC8wIVbsDNFHxM6euguwOf2CEZQ"; // Замініть на ваш API Read Access Token
+const BASE_URL = "https://api.themoviedb.org/3";
 
-  const data = await response.json();
-  return {
-    images: data.results,
-    totalPages: data.total_pages,
-  };
+export const fetchTrendingMovies = async () => {
+  const response = await axios.get(`${BASE_URL}/trending/movie/day`, {
+    headers: { Authorization: `Bearer ${API_TOKEN}` }, // Використовуйте токен
+  });
+  return response.data.results;
+};
+
+export const searchMovies = async (query) => {
+  const response = await axios.get(`${BASE_URL}/search/movie`, {
+    params: { query },
+    headers: { Authorization: `Bearer ${API_TOKEN}` },
+  });
+  return response.data.results;
+};
+
+export const fetchMovieDetails = async (movieId) => {
+  const response = await axios.get(`${BASE_URL}/movie/${movieId}`, {
+    headers: { Authorization: `Bearer ${API_TOKEN}` },
+  });
+  return response.data;
+};
+
+export const fetchMovieCast = async (movieId) => {
+  const response = await axios.get(`${BASE_URL}/movie/${movieId}/credits`, {
+    headers: { Authorization: `Bearer ${API_TOKEN}` },
+  });
+  return response.data.cast;
+};
+
+export const fetchMovieReviews = async (movieId) => {
+  const response = await axios.get(`${BASE_URL}/movie/${movieId}/reviews`, {
+    headers: { Authorization: `Bearer ${API_TOKEN}` },
+  });
+  return response.data.results;
 };
