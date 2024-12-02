@@ -1,0 +1,24 @@
+.ImageGallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 80px; /* Відступ для SearchBar */
+  padding: 0 20px; /* Відступи для зручності */
+  justify-content: center; /* Вирівнювання по центру */
+}
+
+.ImageGalleryItem {
+  overflow: hidden;
+  cursor: pointer; /* Додає курсор на кожне зображення */
+}
+
+.Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.Image:hover {
+  transform: scale(1.1);
+}

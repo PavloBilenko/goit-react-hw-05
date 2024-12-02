@@ -1,0 +1,38 @@
+.SearchBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.SearchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchInput {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.SearchButton {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4fa94d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.SearchButton:hover {
+  background-color: #3b7d3d;
+}
