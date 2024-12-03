@@ -1,0 +1,59 @@
+.container {
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.searchForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.searchButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  background-color: darkblue;
+}
+
+.movieList {
+  list-style: none;
+  padding: 0;
+}
+
+.movieItem {
+  margin-bottom: 10px;
+}
+
+.movieLink {
+  text-decoration: none;
+  color: blue;
+}
+
+.movieLink:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+}

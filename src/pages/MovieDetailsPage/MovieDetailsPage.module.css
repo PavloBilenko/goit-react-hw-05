@@ -1,0 +1,43 @@
+.container {
+  padding: 20px;
+}
+
+.details {
+  display: flex;
+  gap: 20px;
+}
+
+.poster {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.info {
+  max-width: 600px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.userScore,
+.overview,
+.genres {
+  margin: 10px 0;
+}
+
+.additionalInfo {
+  margin-top: 20px;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: blue;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}

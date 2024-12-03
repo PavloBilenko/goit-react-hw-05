@@ -1,6 +1,27 @@
-.Loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+.container {
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.reviewList {
+  list-style: none;
+  padding: 0;
+}
+
+.reviewList li {
+  margin-bottom: 20px;
+}
+
+.author {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.content {
+  font-size: 1rem;
+  line-height: 1.5;
 }

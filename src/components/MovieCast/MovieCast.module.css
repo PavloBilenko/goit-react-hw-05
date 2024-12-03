@@ -1,16 +1,21 @@
-.LoadMoreButton {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4fa94d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.container {
+  padding: 20px;
 }
 
-.LoadMoreButton:hover {
-  background-color: #3b7d3d;
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.castList {
+  list-style: none;
+  padding: 0;
+}
+
+.castList li {
+  margin-bottom: 10px;
+}
+
+.actorName {
+  font-weight: bold;
 }

@@ -5,37 +5,62 @@ const API_TOKEN =
 const BASE_URL = "https://api.themoviedb.org/3";
 
 export const fetchTrendingMovies = async () => {
-  const response = await axios.get(`${BASE_URL}/trending/movie/day`, {
-    headers: { Authorization: `Bearer ${API_TOKEN}` }, // Використовуйте токен
-  });
-  return response.data.results;
+  try {
+    const response = await axios.get(`${BASE_URL}/trending/movie/day`, {
+      headers: { Authorization: `Bearer ${API_TOKEN}` },
+    });
+    return response.data.results;
+  } catch (error) {
+    console.error("Error fetching trending movies:", error.message);
+    throw new Error("Failed to fetch trending movies. Please try again later.");
+  }
 };
 
 export const searchMovies = async (query) => {
-  const response = await axios.get(`${BASE_URL}/search/movie`, {
-    params: { query },
-    headers: { Authorization: `Bearer ${API_TOKEN}` },
-  });
-  return response.data.results;
+  try {
+    const response = await axios.get(`${BASE_URL}/search/movie`, {
+      params: { query },
+      headers: { Authorization: `Bearer ${API_TOKEN}` },
+    });
+    return response.data.results;
+  } catch (error) {
+    console.error("Error searching movies:", error.message);
+    throw new Error("Failed to search movies. Please try again later.");
+  }
 };
 
 export const fetchMovieDetails = async (movieId) => {
-  const response = await axios.get(`${BASE_URL}/movie/${movieId}`, {
-    headers: { Authorization: `Bearer ${API_TOKEN}` },
-  });
-  return response.data;
+  try {
+    const response = await axios.get(`${BASE_URL}/movie/${movieId}`, {
+      headers: { Authorization: `Bearer ${API_TOKEN}` },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching movie details:", error.message);
+    throw new Error("Failed to fetch movie details. Please try again later.");
+  }
 };
 
 export const fetchMovieCast = async (movieId) => {
-  const response = await axios.get(`${BASE_URL}/movie/${movieId}/credits`, {
-    headers: { Authorization: `Bearer ${API_TOKEN}` },
-  });
-  return response.data.cast;
+  try {
+    const response = await axios.get(`${BASE_URL}/movie/${movieId}/credits`, {
+      headers: { Authorization: `Bearer ${API_TOKEN}` },
+    });
+    return response.data.cast;
+  } catch (error) {
+    console.error("Error fetching movie cast:", error.message);
+    throw new Error("Failed to fetch movie cast. Please try again later.");
+  }
 };
 
 export const fetchMovieReviews = async (movieId) => {
-  const response = await axios.get(`${BASE_URL}/movie/${movieId}/reviews`, {
-    headers: { Authorization: `Bearer ${API_TOKEN}` },
-  });
-  return response.data.results;
+  try {
+    const response = await axios.get(`${BASE_URL}/movie/${movieId}/reviews`, {
+      headers: { Authorization: `Bearer ${API_TOKEN}` },
+    });
+    return response.data.results;
+  } catch (error) {
+    console.error("Error fetching movie reviews:", error.message);
+    throw new Error("Failed to fetch movie reviews. Please try again later.");
+  }
 };

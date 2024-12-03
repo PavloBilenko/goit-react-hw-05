@@ -1,0 +1,26 @@
+.container {
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.movieList {
+  list-style: none;
+  padding: 0;
+}
+
+.movieItem {
+  margin-bottom: 10px;
+}
+
+.movieLink {
+  text-decoration: none;
+  color: blue;
+}
+
+.movieLink:hover {
+  text-decoration: underline;
+}
