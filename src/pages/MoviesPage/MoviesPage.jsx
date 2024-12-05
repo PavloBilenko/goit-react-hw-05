@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { searchMovies } from "/src/services/api.js"; // Функція для пошуку фільмів
 import { Link } from "react-router-dom";
 import styles from "./MoviesPage.module.css";
+import "..//..//index.css";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -27,7 +28,7 @@ const MoviesPage = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={"container"}>
       <h1 className={styles.title}>Search Movies</h1>
       <form onSubmit={handleSearch} className={styles.searchForm}>
         <input

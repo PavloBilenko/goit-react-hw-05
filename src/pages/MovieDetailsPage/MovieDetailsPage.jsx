@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 import { fetchMovieDetails } from "/src/services/api.js";
 import styles from "./MovieDetailsPage.module.css";
+import "..//..//index.css";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -46,7 +47,7 @@ const MovieDetailsPage = () => {
     : "https://via.placeholder.com/500x750?text=No+Image";
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Link to={backLink} className={styles.backLink}>
         ← Back
       </Link>

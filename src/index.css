@@ -45,11 +45,13 @@ body {
 
 /* Header Styles */
 .header {
-  width: 100%;
+  width: 840px;
   display: flex;
   justify-content: center;
   padding: 10px 0;
   background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navigation a {
@@ -129,25 +131,6 @@ li {
 
 .movie-list a:hover {
   text-decoration: underline;
-}
-
-/* Table Styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-th {
-  background-color: #646cff;
-  color: #fff;
-}
-td {
-  color: #000;
 }
 
 /* Responsive Design */

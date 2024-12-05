@@ -4,7 +4,7 @@ import "..//..//index.css";
 
 const Navigation = () => {
   return (
-    <nav className="navigation">
+    <nav className="header navigation">
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? "active" : undefined)}

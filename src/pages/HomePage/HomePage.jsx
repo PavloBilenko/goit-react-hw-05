@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchTrendingMovies } from "/src/services/api.js"; // Функція для отримання трендових фільмів
 import { Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
+import "..//..//index.css";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -30,7 +31,7 @@ const HomePage = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <h1 className={styles.title}>Trending Movies</h1>
       {loading ? (
         <p className={styles.loading}>Loading...</p>
