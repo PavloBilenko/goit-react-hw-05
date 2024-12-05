@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 import { fetchMovieDetails } from "/src/services/api.js";
 import styles from "./MovieDetailsPage.module.css";
-import "..//..//index.css";
+import "../../index.css";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
   const location = useLocation();
-  const backLink = location.state?.from ?? "/";
+  const backLinkRef = useRef(location.state?.from ?? "/");
 
   useEffect(() => {
     const getMovieDetails = async () => {
@@ -20,6 +20,7 @@ const MovieDetailsPage = () => {
         setError(err.message);
       }
     };
+
     getMovieDetails();
   }, [movieId]);
 
@@ -48,7 +49,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div className="container">
-      <Link to={backLink} className={styles.backLink}>
+      <Link to={backLinkRef.current} className={styles.backLink}>
         ← Back
       </Link>
       <div className={styles.details}>
@@ -73,12 +74,12 @@ const MovieDetailsPage = () => {
         <h2>Additional Information</h2>
         <ul>
           <li>
-            <Link to={`cast`} state={{ from: backLink }}>
+            <Link to={`cast`} state={{ from: backLinkRef.current }}>
               Cast
             </Link>
           </li>
           <li>
-            <Link to={`reviews`} state={{ from: backLink }}>
+            <Link to={`reviews`} state={{ from: backLinkRef.current }}>
               Reviews
             </Link>
           </li>

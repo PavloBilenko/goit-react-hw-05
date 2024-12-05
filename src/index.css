@@ -149,4 +149,16 @@ li {
   }
 }
 
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.active {
+  font-weight: bold;
+  color: blue;
+}
+
 

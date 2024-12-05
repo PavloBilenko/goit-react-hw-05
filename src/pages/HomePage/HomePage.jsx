@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchTrendingMovies } from "/src/services/api.js"; // Функція для отримання трендових фільмів
+import { fetchTrendingMovies } from "/src/services/api.js";
 import { Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import "..//..//index.css";
