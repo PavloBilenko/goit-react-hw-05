@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { searchMovies } from "/src/services/api.js";
+import MovieList from "/src/components/MovieList/MovieList";
 import styles from "./MoviesPage.module.css";
 import "../../index.css";
 
@@ -61,15 +62,11 @@ const MoviesPage = () => {
 
       {error && <p className={styles.error}>{error}</p>}
 
-      <ul className={styles.movieList}>
-        {movies.map((movie) => (
-          <li key={movie.id} className={styles.movieItem}>
-            <Link to={`/movies/${movie.id}`} className={styles.movieLink}>
-              {movie.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {loading ? (
+        <p className={styles.loading}>Loading...</p>
+      ) : (
+        <MovieList movies={movies} />
+      )}
     </div>
   );
 };

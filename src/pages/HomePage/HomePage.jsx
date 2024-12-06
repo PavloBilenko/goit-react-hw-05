@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { fetchTrendingMovies } from "/src/services/api.js";
-import { Link } from "react-router-dom";
+import MovieList from "/src/components/MovieList/MovieList";
 import styles from "./HomePage.module.css";
-import "..//..//index.css";
+import "../../index.css";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -23,6 +23,7 @@ const HomePage = () => {
         setLoading(false);
       }
     };
+
     getTrendingMovies();
   }, []);
 
@@ -36,15 +37,7 @@ const HomePage = () => {
       {loading ? (
         <p className={styles.loading}>Loading...</p>
       ) : (
-        <ul className={styles.movieList}>
-          {movies.map((movie) => (
-            <li key={movie.id} className={styles.movieItem}>
-              <Link to={`/movies/${movie.id}`} className={styles.movieLink}>
-                {movie.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <MovieList movies={movies} />
       )}
     </div>
   );
